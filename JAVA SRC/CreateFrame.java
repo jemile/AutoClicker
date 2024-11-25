@@ -44,7 +44,6 @@ public class CreateFrame extends JFrame
 	// change if activated or not
 	public void activateHook()
 	{
-		
 		activated = !activated;
 		
 		if (clicker.getLoader() == 1)
@@ -77,15 +76,15 @@ public class CreateFrame extends JFrame
 		// exit_on_close didn't work with unloading the dll
 		// so i had to override window closing to use system.exit(0);
 		this.addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                clicker.setEnabled(false);
-                System.exit(0);
-            }
-        });
+         @Override
+         public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+             clicker.setEnabled(false);
+             System.exit(0);
+         }
+      });
 		
 		JPanel contentPane = new JPanel();
-        this.setContentPane(contentPane);
+      this.setContentPane(contentPane);
 		
 		m_clicksLabel = new JLabel();
 		m_clicksLabel.setText("Clicks Per Second:");
